@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <title>Photo detective</title>
+    <link rel='stylesheet' href="./static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+</head>
+
+<body>
+<div id='photo-loader-panel' class='width-100'>
+    <h1>Photo Detective</h1>
+    <img id='photo-loader-panel__icon' src="./static/img/detective.png" alt='Detective icon'>
+    <button id='photo-loader-panel__button'> Choose photo...</button>
+    <input id="file-input" class='invisible' type="file" accept=".jpg, .jpeg" name="photo"/>
+</div>
+
+<div id='result-panel' class='width-0'>
+    <div id='result-panel__content' class='invisible'>
+        <div id='image-container'>
+            <img id='image-preview' class='image-preview' src=''>
+        </div>
+        <div class='button-result-container'>
+            <input id="check-button" class="check-button invisible" type="button" value="Check"/>
+            <p id='result-text' class='invisible'></p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="./static/js/index.js"></script>
+</html>
