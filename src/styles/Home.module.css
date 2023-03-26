@@ -1,0 +1,173 @@
+.container {
+  height: 100vh;
+}
+
+.loadPhotoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  height: 100%;
+  background-color: #1f2735;
+}
+
+.title {
+  font-size: 45px;
+  color: white;
+  text-align: center;
+}
+
+.loadPhotoBlock > * {
+  margin-top: 3%;
+}
+
+.appLogo {
+  height: 346px;
+  width: 380px;
+}
+
+.loadPhotoButton {
+  cursor: pointer;
+  width: 380px;
+  height: 66px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  background-color: #e6e6e6;
+  color: #232323;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.loadPhotoButton:hover {
+  background-color: #d4d4d4;
+}
+
+.resultPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  height: 100vh;
+}
+
+.resultContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userImageContainer {
+  margin-top: 35px;
+  border: 10px solid white;
+  width: 450px;
+  height: 400px;
+  background-color: #ebebeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  color: #232323;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 13px;
+}
+
+.invisible {
+  display: none !important;
+}
+
+.width-0 {
+  width: 0;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-transition {
+  transition: width .7s ease 0s;
+}
+
+.image-preview {
+  max-width: 450px;
+  max-height: 400px;
+}
+
+.button-result-container {
+  margin-top: 8px;
+  width: 470px;
+  height: 70px;
+}
+
+.check-button {
+  width: 470px;
+  height: 70px;
+  background-color: #1e2633;
+  border: 2px solid #ebebeb;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: Roboto Slab, serif;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer !important;
+  outline: none;
+}
+
+.check-button:hover {
+  background-color: #1c232f;
+}
+
+.loading {
+  font-size: 0;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+  border-radius: 35px;
+  padding: 0;
+  border: 7px solid #1e2633;
+  border-bottom: 7px solid rgba(255, 255, 255, 0.0);
+  border-left: 7px solid rgba(255, 255, 255, 0.0);
+  background-color: transparent !important;
+  animation-name: rotateAnimation;
+  -webkit-animation-name: wk-rotateAnimation;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes wk-rotateAnimation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.stopLoading {
+  opacity: 0;
+  transform: rotate(0deg) !important;
+  transform: scale(0) !important;
+}
