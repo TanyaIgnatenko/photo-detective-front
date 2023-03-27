@@ -2,6 +2,7 @@ function HttpRequest(method: 'GET' | 'POST', url: string, data = null) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
 
+        console.log('url', url);
         xhr.open(method, url);
 
         xhr.onload = function () {
