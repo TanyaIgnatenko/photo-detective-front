@@ -81,6 +81,7 @@ export default function Home() {
                     <button
                         className='photo-loader-panel__button'
                         onClick={handleLoadPhotoButtonClick}
+                        disabled={result?.isProcessing}
                     >
                         Choose photo...
                     </button>
