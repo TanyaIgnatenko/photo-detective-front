@@ -3,7 +3,9 @@ import {useCallback, useRef, useState} from "react";
 import cn from 'classnames';
 import {HttpPost} from "@/utils/http";
 
-const statusText = {
+type Result = 'modified' | 'original';
+
+const statusText: Record<Result, string> = {
     'modified': 'Modified',
     'original': 'Original'
 };
@@ -50,7 +52,7 @@ export default function Home() {
 
         promise.then(
             (response) => {
-                let imageStatus = JSON.parse(response).status;
+                let imageStatus: Result = JSON.parse(response as string).status;
                 setResult({
                     isProcessing: false,
                     result: statusText[imageStatus],
