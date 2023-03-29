@@ -48,7 +48,7 @@ export default function Home() {
             isProcessing: true
         });
 
-        let promise  = HttpPost('http://212.164.218.218:5000/check', JSON.stringify({'image': userImage}))
+        let promise  = HttpPost('/check', JSON.stringify({'image': userImage}))
 
         promise.then(
             (response) => {

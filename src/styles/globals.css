@@ -52,7 +52,7 @@ h1 {
 }
 
 .resultPanel {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -97,6 +97,7 @@ h1 {
 }
 
 .halfWidth {
+  display: flex;
   width: 50%;
 }
 
