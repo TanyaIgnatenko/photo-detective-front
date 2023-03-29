@@ -48,7 +48,7 @@ export default function Home() {
             isProcessing: true
         });
 
-        let promise  = HttpPost('https://photo-detective-back-2.onrender.com/check', JSON.stringify({'image': userImage}))
+        let promise  = HttpPost('http://212.164.218.218:5000/check', JSON.stringify({'image': userImage}))
 
         promise.then(
             (response) => {
@@ -105,7 +105,7 @@ export default function Home() {
                     <div className='buttonResultContainer'>
                       <input
                           className={cn('checkButton', {
-                              invisible: !userImage || result?.result,
+                              hidden: !userImage || result?.result,
                               loading: result?.isProcessing,
                           })}
                           type="button"
