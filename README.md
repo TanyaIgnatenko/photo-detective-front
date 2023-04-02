@@ -5,4 +5,4 @@ A tool to detect image insertions on photos using machine learning [front]
 
 Technologies used: React, TypeScript, next.js, html, сss (for the frontend part)
 
-[](assets/screencast.gif)
+[](./assets/screencast.gif)
