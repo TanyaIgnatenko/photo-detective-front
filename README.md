@@ -3,4 +3,4 @@ A tool to detect image insertions on photos using machine learning [front]
 
 **Demo: https://photo-detective-front-3opm.vercel.app/**
 
-Technologies used: React, TypeScript, next.js, html, сss (for the frontend part)
+Technologies used: React, TypeScript, next.js, html, сss (for the frontend)
