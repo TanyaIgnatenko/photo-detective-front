@@ -49,7 +49,7 @@ export default function Home() {
         });
 
         try {
-            const response = await fetch('http://212.164.218.218:5000/check', {
+            const response = await fetch('/check', {
                 method: "POST",
                 body: JSON.stringify({'image': userImage})
             });
