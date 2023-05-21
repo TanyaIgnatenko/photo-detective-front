@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import {useCallback, useRef, useState} from "react";
 import cn from 'classnames';
-import {HttpPost} from "@/utils/http";
 
 type Result = 'modified' | 'original';
 
@@ -43,28 +42,30 @@ export default function Home() {
         isProcessing?: boolean,
         result?: string,
     } | null>(null);
-    const handleCheckPhotoClick = useCallback(() => {
+
+    const handleCheckPhotoClick = useCallback(async () => {
         setResult({
             isProcessing: true
         });
 
-        let promise  = HttpPost('/check', JSON.stringify({'image': userImage}))
+        try {
+            const response = await fetch('http://212.164.218.218:5000/check', {
+                method: "POST",
+                body: JSON.stringify({'image': userImage})
+            });
+            const json = await response.json();
 
-        promise.then(
-            (response) => {
-                let imageStatus: Result = JSON.parse(response as string).status;
-                setResult({
-                    isProcessing: false,
-                    result: statusText[imageStatus],
-                });
-            },
-            (error) => {
-                // TODO: show smt meaningful
-                setResult({
-                    isProcessing: false,
-                });
-            }
-        );
+            let imageStatus: Result = json.status;
+            setResult({
+                isProcessing: false,
+                result: statusText[imageStatus],
+            });
+        } catch (error) {
+            setResult({
+                isProcessing: false,
+                result: 'Error',
+            });
+        }
     }, [userImage]);
 
   return (
