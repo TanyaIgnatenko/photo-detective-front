@@ -1,36 +1,35 @@
-* {
-  font-family: Roboto Slab, serif;
-  text-align: center;
-  margin: 0;
+.container {
+  height: 100vh;
 }
 
-h1 {
-  font-size: 45px;
-  color: white;
-}
-
-.loadPhotoPanel {
+.loadPhotoBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   float: left;
   height: 100vh;
-  background-color: #1f2735;
   width: 100%;
+  background-color: #1f2735;
   transition: width .7s ease 0s;
 }
 
-.loadPhotoPanel > * {
-  margin-top: 3%;
-}
-
-.photo-loader-panel__icon {
+.appIcon {
   height: 346px;
   width: 380px;
 }
 
-.photo-loader-panel__button {
+.title {
+  font-size: 45px;
+  color: white;
+  text-align: center;
+}
+
+.loadPhotoBlock > * {
+  margin-top: 3%;
+}
+
+.loadPhotoButton {
   cursor: pointer;
   width: 380px;
   height: 66px;
@@ -43,7 +42,7 @@ h1 {
   font-weight: bold;
 }
 
-.photo-loader-panel__button:hover {
+.loadPhotoButton:hover {
   background-color: #d4d4d4;
 }
 
@@ -51,26 +50,25 @@ h1 {
   display: none;
 }
 
-.resultPanel {
-  display: none;
+.resultBlock {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ebebeb;
   height: 100vh;
   width: 0;
-  transition: width .7s ease 0s;
+  overflow: hidden;
 }
 
-.resultPanelContent {
+.resultContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: opacity 0s linear 0.7s;
 }
 
-.imageContainer {
+.userImageContainer {
   margin-top: 35px;
   border: 10px solid white;
   width: 450px;
@@ -81,27 +79,14 @@ h1 {
   align-items: center;
 }
 
-.resultText {
-  color: #232323;
+.result {
   font-size: 35px;
   font-weight: bold;
+  color: #232323;
   margin-top: 13px;
 }
 
-.invisible {
-  opacity: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-.halfWidth {
-  display: flex;
-  width: 50%;
-}
-
-.image {
+.userImage {
   max-width: 450px;
   max-height: 400px;
 }
@@ -110,6 +95,7 @@ h1 {
   margin-top: 8px;
   width: 470px;
   height: 70px;
+  text-align: center;
 }
 
 .checkButton {
@@ -124,29 +110,32 @@ h1 {
   font-weight: bold;
   cursor: pointer !important;
   outline: none;
-  animation: none;
 }
 
 .checkButton:hover {
   background-color: #1c232f;
 }
 
-.loading {
-  font-size: 0;
-  width: 70px;
-  height: 70px;
-  margin-top: 5px;
-  border-radius: 35px;
-  padding: 0;
-  border: 7px solid #1e2633;
-  border-bottom: 7px solid rgba(255, 255, 255, 0.0);
-  border-left: 7px solid rgba(255, 255, 255, 0.0);
-  background-color: transparent !important;
-  animation-name: rotateAnimation;
-  animation-duration: 1s;
-  animation-delay: 0.2s;
-  animation-iteration-count: infinite;
+.checkButton.processing {
+      font-size: 0;
+      width: 70px;
+      height: 70px;
+      margin-top: 5px;
+      border-radius: 35px;
+      padding: 0;
+      border: 7px solid #1e2633;
+      border-bottom: 7px solid rgba(255, 255, 255, 0.0);
+      border-left: 7px solid rgba(255, 255, 255, 0.0);
+      background-color: transparent !important;
+      animation-duration: 1s;
+      animation-delay: 0.2s;
+      animation-iteration-count: infinite;
 }
+
+.checkButton.processing :local {
+      animation-name: rotateAnimation;
+}
+
 
 @keyframes rotateAnimation {
   0% {
@@ -155,4 +144,27 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+@-webkit-keyframes wk-rotateAnimation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.stopLoading {
+  opacity: 0;
+  transform: rotate(0deg) !important;
+  transform: scale(0) !important;
+}
+
+.halfWidth {
+  width: 50%;
+}
+
+.hidden {
+  display: none;
 }
