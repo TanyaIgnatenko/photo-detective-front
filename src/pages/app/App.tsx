@@ -15,7 +15,7 @@ export default function App() {
     const [isFirstImage, setIsFirstImage] = useState(true);
     const [userImage, setUserImage] = useState<string>();
     const [result, setResult] = useState<{
-        value?: string,
+        value?: string | null,
         isProcessing?: boolean,
     }>();
 
@@ -31,6 +31,10 @@ export default function App() {
 
         loadFile(files[0], (event: ProgressEvent<FileReader>) => {
             setUserImage(event.target?.result as string);
+            setResult({
+                value: null,
+                isProcessing: false,
+            });
             if (isFirstImage) setIsFirstImage(false);
         });
     }, [isFirstImage]);
@@ -55,7 +59,7 @@ export default function App() {
         } catch (error) {
             setResult({
                 isProcessing: false,
-                value: 'Error',
+                value: 'Server is unavailable',
             });
         }
     }, [userImage]);
