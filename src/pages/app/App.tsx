@@ -30,6 +30,10 @@ export default function App() {
         }
 
         loadFile(files[0], (event: ProgressEvent<FileReader>) => {
+            setResult({
+                value: null,
+                isProcessing: false,
+            });
             setUserImage(event.target?.result as string);
             setResult({
                 value: null,
